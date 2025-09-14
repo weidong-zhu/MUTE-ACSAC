@@ -64,6 +64,26 @@ echo "-> Decompressing image..."
 tar -xzvf "$DEST_ARTIFACT" -C "$IMAGE_DIR/"
 
 echo "Image 'mute_ae.img' is now available in $IMAGE_DIR"
+
+## Install libGMP
+
+# 1. Download the GMP package
+wget https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+
+# 2. Decompress the package
+tar xf gmp-6.3.0.tar.xz
+
+cd gmp-6.3.0
+
+# 3. Configuration setting
+./configure
+
+# 4. Compile the GMP source code
+make -j8
+
+# 5. Install the GMP
+sudo make install
+
 echo "--------------------------------------------------"
 
 echo "Setup finished successfully!"
