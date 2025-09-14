@@ -1,0 +1,7 @@
+# Claim Discussion
+
+We will reproduce the experimental result in the main body of our paper for Figure 3, Figure 4, Figure 5, and Figure 6.
+
+To get the result, you only need to simply run the script run.sh in the current directory.
+
+Finishing the entire experiment is expected to take over 24 hours.

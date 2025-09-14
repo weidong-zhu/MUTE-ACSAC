@@ -1,0 +1,321 @@
+% \documentclass[conference,compsoc]{IEEEtran}
+
+% \PassOptionsToPackage{hyphens}{url}
+
+\documentclass[conference,compsoc]{IEEEtran}
+
+\PassOptionsToPackage{hyphens}{url}
+%\renewcommand\footnotetextcopyrightpermission[1]{}
+\usepackage{epsfig,authblk}
+\usepackage{etex}
+\pagestyle{plain}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+% \AtBeginDocument{%
+%   \providecommand\BibTeX{{%
+%     Bib\TeX}}}
+
+
+
+% % % % % % % % % % % % % % %
+% PACKAGE USAGES
+% % % % % % % % % % % % % % %
+\usepackage{algorithm,algorithmicx,algpseudocode}
+%\usepackage{afterpage}
+\usepackage{amstext}   % provides \text{} command in math mode
+\usepackage{amsmath}
+%\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+%\usepackage{authblk}
+\usepackage{lipsum}
+\usepackage{amsthm}
+\usepackage{float} % custom listing float and 'H' here
+\usepackage{balance}
+%\usepackage{caption}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{comment}
+
+\let\labelindent\relax% https://tex.stackexchange.com/questions/170772/command-labelindent-already-defined
+\usepackage{enumitem}
+
+\usepackage{epic}
+\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage[T1]{fontenc}% http://ctan.org/pkg/fontenc
+\usepackage{graphicx}% http://ctan.org/pkg/graphicx
+%\usepackage{hyperref}
+\usepackage{latexsym}
+%\usepackage[colorlinks=true,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black]{hyperref}
+\usepackage{hyperref}
+\hypersetup{                    % ...like so
+	colorlinks=true,
+	linkcolor={blue!70!black},
+	citecolor=black,
+	urlcolor={blue!70!black}
+}
+\usepackage{listings}
+\usepackage{makecell}% http://ctan.org/pkg/makecell
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{soul}
+% \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage[subrefformat=parens,font=normalsize,labelformat=parens]{subfig}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{xurl}
+\usepackage{xspace}    % sticks a sane space after a command
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[color=white]{todonotes}
+\usepackage[utf8]{inputenc} % for hevea
+\usepackage{algpseudocode}
+\usetikzlibrary{patterns}
+
+
+
+% \titlespacing*{\section}
+% {0pt}{2.5ex}{1.2ex}
+% \titlespacing*{\subsection}
+% {0pt}{1.5ex}{0.7ex}
+\usepackage{caption}
+% \captionsetup[table]{skip=2pt}
+% \addtolength\abovecaptionskip{-7pt}
+%\addtolength\belowcaptionskip{-8pt}
+% \captionsetup[subfloat]{font=scriptsize,captionskip=-1pt}
+%\usepackage[all=normal,floats=tight,mathspacing=tight,wordspacing=tight]{savetrees}
+%\usepackage{cite}
+%\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%	\usepackage{balance}
+% % % % % % % % % % % % % % %
+% PACKAGE CUSTOMIZATION
+% % % % % % % % % % % % % % %
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%\lstset{
+%  %language=python,
+%  numbers=none,
+%  %style=Prolog-pygsty,
+%  basicstyle={\linespread{0.6}\tt\small},
+%  stringstyle=\color{strings},
+%  commentstyle=\color{comments},
+%  emph      = [1]{
+%    allow, type_transition,
+%    usb,
+%    bt, hci, l2cap,
+%    nfc},
+%  emphstyle = [1]{\ttfamily\bfseries},
+%  stepnumber=1,                   % the step between two line-numbers.
+%  numbersep=5pt,                  % how far the line-numbers are from the code
+%  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+%  showspaces=false,               % show spaces adding particular underscores
+%  showstringspaces=false,         % underline spaces within strings
+%  showtabs=false,                 % show tabs within strings adding particular underscores
+%  tabsize=2,                      % sets default tabsize to 2 spaces
+%  captionpos=b,                   % sets the caption-position to bottom
+%  breaklines=true,                % sets automatic line breaking
+%  breakatwhitespace=true,         % sets if automatic breaks should only happen at whitespace
+%  xleftmargin=1em,framexleftmargin=1.5em
+%}%
+
+%\newfloat{lstfloat}{htbp}{lop}
+%\floatname{lstfloat}{Listing}
+
+
+\renewcommand{\sectionautorefname}{Section}
+\newcommand{\algorithmautorefname}{Algorithm}
+\renewcommand{\subsectionautorefname}{Section}
+\newcommand{\lstfloatautorefname}{Listing}
+\newcommand{\ignoreme}[1]{}
+
+\newcommand{\subfigureautorefname}{\figureautorefname}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+% % % % % % % % % % % % % % %
+% CUSTOM COMMANDS
+% % % % % % % % % % % % % % %
+\definecolor{cb1}{RGB}{0, 73, 73}      % Dark teal
+\definecolor{cb7}{RGB}{255, 109, 182}  % Pink
+\definecolor{cb3}{RGB}{255, 128, 14}   % Orange
+\definecolor{cb4}{RGB}{171, 171, 0}    % Olive
+\definecolor{cb5}{RGB}{89, 89, 89}     % Dark gray
+\definecolor{cb6}{RGB}{217, 95, 2}     % Reddish orange
+\definecolor{cb9}{RGB}{0, 128, 43}     % Green
+\definecolor{cb8}{RGB}{105, 179, 216}  % Sky blue
+\definecolor{cb2}{RGB}{168, 120, 110}  % Brownish
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=0.1pt] (char) {#1};}}
+	
+\newcommand*\bcircled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,fill,inner sep=0.1pt] (char) {\textcolor{white}{#1}};}}
+
+\newcommand*\gcircled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,fill={rgb:black,1;white,2},inner sep=0.1pt] (char) {{#1}};}}
+
+%\usepackage[disable]{todonotes}
+\newcommand{\assignment}[2]{\todo[inline,author=\color{blue}{\bfseries Assignment \underline{#1}}]{\color{black}#2}}
+%\newcommand{\outline}[1]{(\emph{{\bf Outline}: #1})}
+%\newcommand{\outline}[1]{}
+
+% \renewcommand{\rothead}[2][60]{\makebox[9mm][c]{\rotatebox{#1}{\makecell[c]{#2}}}}%
+
+% \newcommand{\cmark}{\ding{51}}%
+% \newcommand{\xmark}{\ding{55}}%
+% \renewcommand{\rothead}[2][60]{\makebox[9mm][c]{\rotatebox{#1}{\makecell[c]{#2}}}}%
+
+%\newcommand{\grant}[1]{{\color{blue}{\em[TODO($Grant$) - #1]}}}
+% \newcommand{\tocite}[1]{{\color{purple}{[\textbf{Cite:} #1]}}}
+
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+
+% Disable TODOs
+%\renewcommand{\grant}[1]{}
+
+%\newcommand{\rephrase}[1]{ [This passage is self-plagiarized needs to be reworked: {\color{red}#1}]}
+\newcommand{\ws}[1]{{\color{white}#1}}
+
+% Place your quick name macros here
+
+
+\newcommand{\weidong}[1]{{\color{blue}{\em[$Weidong$ - #1]}}}
+\newcommand{\wbnote}[1]{\ifx\outforreview\undefined\refstepcounter{mynote}{\it\textcolor{green}{(WB~\thenote: { #1})}}\fi}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% % % % % % % % % % % % % % %
+% DOCUMENT HACKS
+% % % % % % % % % % % % % % %
+
+%\makeatletter
+%\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+%\makeatother
+%
+%\makeatletter
+%\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+%\makeatother
+%
+%\makeatletter
+%\newcommand{\labitem}[2]{%
+%\def\@itemlabel{\textbf{#1}}
+%\item
+%\def\@currentlabel{#1}\label{#2}}
+%\makeatother
+
+% % % % % % % % % % % % % % %
+% TITLE AND AUTHORS
+% % % % % % % % % % % % % % %
+
+%\title{NASA: NVM-Assisted Secure Deletion for Flash Memory }
+%%\date{}
+%\author{Anonymous}
+
+%\author[1]{Weidong Zhu}
+%\author[1]{Grant Hernandez}
+%\author[1]{Kevin R. B. Butler}
+%\affil[1]{\normalsize Florida Institute for Cyber Security (FICS) Research, University of
+%  Florida, Gainesville, FL, USA \authorcr
+%\textit{\small \{grant.hernandez,butler\}@ufl.edu}\vspace{1mm}}
+%\affil[2]{\normalsize Institution 2 \authorcr
+%  \textit{\small email@example.com}\vspace{1mm}}
+
+% % % % % % % % % % % % % % %
+% DOCUMENT BODY
+% % % % % % % % % % % % % % %
+
+%\sloppy
+%
+%\AtBeginDocument{%
+%	\providecommand\BibTeX{{%
+%			\normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+%\setcopyright{acmcopyright}
+%\copyrightyear{2021}
+%\acmYear{2021}
+%\acmDOI{10.1145/1122445.1122456}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+%\acmConference[EUROSYS '22]{EUROSYS '22}{April 05--08, 2022}{Rennes, France
+%}
+%\acmBooktitle{EUROSYS '22,
+%	April 05--08, 2022, Rennes, France
+%}
+%\acmPrice{}
+%\acmISBN{}
+
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+
+\begin{figure*}
+	
+	\minipage[t]{0.32\textwidth}
+	%\vspace{0pt}
+	\input{tikz_scripts/bw.tikz}
+	\vspace{-1.5em}	
+	\caption{{The bandwidth of Baseline, PEARL, MDEFTL and MUTE when testing FIO benchmarks.}}
+	%	\vspace{-0.7em}
+	\label{bandwidth}
+	%		\vspace{-1em}
+	\endminipage\hfill
+	\minipage[t]{0.32\textwidth}
+	%\vspace{0pt}
+	\input{tikz_scripts/regular_lat.tikz}
+	\vspace{-0.3em}	
+	\caption{{The average latency of Baseline, PEARL, MDEFTL and MUTE when evaluating MSR workloads.}}
+	%	\vspace{-0.7em}
+	\label{response_time}
+	%		\vspace{-1em}
+	\endminipage\hfill
+	\minipage[t]{0.32\textwidth}
+	%\vspace{0pt}
+	\input{tikz_scripts/waf.tikz}
+	\vspace{-0.3em}	
+	\caption{{The average WAF of Baseline, PEARL, MDEFTL and MUTE when evaluating MSR workloads.}}
+	
+	\label{waf-msr}
+	\vspace{-2em}
+	\endminipage\hfill
+	
+	% 	\minipage[t]{0.23\textwidth}
+	%         %\vspace{0pt}
+	% 	\input{tikz_scripts/lat_portion.tikz}
+	% 	\vspace{-1.7em}	
+	% 	\caption{{The latency percentage of MUTE-H in different operations.}}
+	% %	\vspace{-0.7em}
+	% 	\label{response_time}
+	% 	%		\vspace{-1em}
+	% 	\endminipage
+	
+	%\vspace{-1em}
+\end{figure*}
+
+\begin{figure}
+	\centering
+	\vspace{-0.5em}
+	\input{tikz_scripts/cap_plot.tikz}
+	\vspace{-0.5em}
+	\caption{Hidden volume capacity $\mathcal{V}_h$ for different page size $P$ when total capacity $C$ is 512GB and $M$ is 56 bits}
+	\vspace{-1em}
+	\label{fig:capacity}
+\end{figure}
+
+
+
+
+
+
+\end{document}

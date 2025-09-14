@@ -1,0 +1,43 @@
+	\begin{tikzpicture}
+	\begin{axis} [
+	ybar,
+	style={font=\scriptsize},
+	symbolic x coords={SW,SR,RW,RR},
+%	skip coords between index={5}{9},
+	%		nodes near coords align={vertical},
+	y label style={at={(axis description cs:0.18,.5)},anchor=south},
+	ylabel style={align=center},
+	ylabel={Throughput (MB/s)},
+	ymajorgrids,
+	ytick style={draw=none},
+	ymin=0,
+	ymax=320,
+	ytick={0,160,320},
+	xtick=data,
+	ybar=0.05pt,
+	height=2.8cm, width=6.2cm,
+	legend style={fill=none,draw=none,at={(1.8,1.4)},anchor=north,legend columns=8,nodes={scale=0.9, transform shape}},
+	legend cell align={left},
+	legend image code/.code={
+		\draw [#1] (0cm,-0.1cm) rectangle (0.1cm,0.1cm); }
+	legend cell align={left},
+	bar width=0.12cm,
+	xticklabel style={outer sep=-3pt},
+	xtick style={draw=none},
+	xtick distance={120},
+	enlarge x limits=0.18,
+	]
+	
+	%\addplot [fill=cb1,postaction={pattern=horizontal lines}] table[x=trace,y=SSD-NoFDE,col sep=comma] {results_csv/bw.csv};
+        \addplot [fill=cb2,postaction={pattern=grid}] table[x=trace,y=SSD-FDE,col sep=comma] {results_csv/bw.csv};
+        \addplot [fill=cb1,postaction={pattern=north east lines}] table[x=trace,y=PEARL-P,col sep=comma] {results_csv/bw.csv};
+	\addplot [fill=cb4,postaction={pattern=crosshatch}] table[x=trace,y=PEARL-H,col sep=comma] {results_csv/bw.csv};
+ 	\addplot [fill=cb5,postaction={pattern=dots}] table[x=trace,y=MDEFTL-P,col sep=comma] {results_csv/bw.csv};
+	\addplot [fill=cb6,postaction={pattern=bricks}] table[x=trace,y=MDEFTL-H,col sep=comma] {results_csv/bw.csv};
+	\addplot [fill=cb7,postaction={pattern=north west lines}] table[x=trace,y=MUTE-PO,col sep=comma] {results_csv/bw.csv};
+	\addplot [fill=cb8,postaction={pattern=horizontal lines}] table[x=trace,y=MUTE-PH,col sep=comma] {results_csv/bw.csv};
+	\addplot [fill=cb9,postaction={pattern=}] table[x=trace,y=MUTE-H,col sep=comma] {results_csv/bw.csv};
+	%,nodes near coords,every node near coord/.append style={font=\scriptsize}
+	\legend{Baseline,PEARL-P,PEARL-H,MDEFTL-P,MDEFTL-H,MUTE-PO,MUTE-PH,MUTE-H}
+	\end{axis}
+	\end{tikzpicture}

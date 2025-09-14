@@ -1,0 +1,39 @@
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    style={font=\scriptsize},
+    xlabel={Page size $P$ (KB)},
+    ylabel={Capacity $\mathcal{V}_h$ (GB)},
+    xlabel style={at={(axis description cs:0.5,-0.1)},anchor=south},
+    ylabel style={at={(axis description cs:0.1,.5)},anchor=south},
+    ylabel style={align=center},
+    xtick={0,4,16,32,64},
+    ytick={0,10,20,30,40,50},
+    xtick pos=bottom,
+    ytick pos=left,
+    ymin=0,
+    ymax=50, % Adjust based on your data
+    height=3.3cm,
+    width=9cm,
+    legend style={fill=none,draw=none,at={(0.5,1.22)},anchor=north,legend columns=2,nodes={scale=1.0, transform shape}},
+    legend cell align={left},
+    legend image post style={xscale=0.9},
+    cycle list name=color list,
+    grid=major,
+    thick,
+    enlarge x limits=0.05,
+    scatter/classes={%
+        a={mark=square*,blue},%
+        b={mark=triangle*,red}},
+]
+
+\addplot+[thick,cb1] table[x=P_KB,y=Y_b1,col sep=comma] {results_csv/new_cap_data.csv};
+\addplot+[thick,cb2] table[x=P_KB,y=Y_b2,col sep=comma] {results_csv/new_cap_data.csv};
+
+\legend{b = 128 bits, b = 256 bits}
+\end{axis}
+\end{tikzpicture}
+
+
+

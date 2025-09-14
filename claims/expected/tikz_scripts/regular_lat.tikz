@@ -1,0 +1,45 @@
+	\begin{tikzpicture}
+	\begin{axis} [
+	ybar,
+	style={font=\scriptsize},
+	symbolic x coords={hm,prxy,rsrch,wdev},
+%	skip coords between index={5}{9},
+	%		nodes near coords align={vertical},
+	y label style={at={(axis description cs:0.23,.5)},anchor=south},
+	ylabel style={align=center},
+	ylabel={Latency (ms)},
+	ymajorgrids,
+	ytick style={draw=none},
+	ymin=0,
+	ymax=6,
+	ytick={0,3,6},
+	xtick=data,
+	ybar=0.05pt,
+	height=2.8cm, width=6.2cm,
+	legend style={fill=none,draw=none,at={(0.5,1.4)},anchor=north,legend columns=4,nodes={scale=0.8, transform shape}},
+	legend cell align={left},
+	legend image code/.code={
+		\draw [#1] (0cm,-0.1cm) rectangle (0.1cm,0.1cm); }
+	legend cell align={left},
+	bar width=0.12cm,
+	xticklabel style={outer sep=-9pt,text height=2.2ex},
+	xtick style={draw=none},
+	xtick distance={120},
+	enlarge x limits=0.18,
+	]
+
+	%\addplot [fill=cb1,postaction={pattern=horizontal lines}] table[x=trace,y=SSD-NoFDE,col sep=comma] {results_csv/latency.csv};
+        \addplot [fill=cb2,postaction={pattern=grid}] table[x=trace,y=SSD-FDE,col sep=comma] {results_csv/latency.csv};
+        \addplot [fill=cb1,postaction={pattern=north east lines}] table[x=trace,y=PEARL-P,col sep=comma] {results_csv/latency.csv};
+	\addplot [fill=cb4,postaction={pattern=crosshatch}] table[x=trace,y=PEARL-H,col sep=comma] {results_csv/latency.csv};
+ 	\addplot [fill=cb5,postaction={pattern=dots}] table[x=trace,y=MDEFTL-P,col sep=comma] {results_csv/latency.csv};
+	\addplot [fill=cb6,postaction={pattern=bricks}] table[x=trace,y=MDEFTL-H,col sep=comma] {results_csv/latency.csv};
+	\addplot [fill=cb7,postaction={pattern=north west lines}] table[x=trace,y=MUTE-PO,col sep=comma] {results_csv/latency.csv};
+	\addplot [fill=cb8,postaction={pattern=horizontal lines}] table[x=trace,y=MUTE-PH,col sep=comma] {results_csv/latency.csv};
+        \addplot [fill=cb9,postaction={pattern=}] table[x=trace,y=MUTE-H,col sep=comma] {results_csv/latency.csv};
+	% \addplot [fill=cb9,postaction={pattern=},nodes near coords,nodes near coords align={vertical},every node near coord/.append style={font=\scriptsize}] table[x=trace,y=MUTE-H,col sep=comma] {results_csv/latency.csv};
+
+	
+	%\legend{Baseline,MUTE-PO,MUTE-PH,MUTE-H}
+	\end{axis}
+	\end{tikzpicture}

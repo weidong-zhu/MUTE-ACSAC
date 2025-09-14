@@ -1,0 +1,4 @@
+obj-y += ftl.o
+obj-y += latency_gen.o
+obj-y += fde_crypto.o
+obj-y += nvm.o
